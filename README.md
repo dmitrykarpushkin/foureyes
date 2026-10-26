@@ -1,4 +1,4 @@
-# agent-lab
+# foureyes
 
 **Agents may not grade their own work.** An orchestration spec for LLM coding agents, plus a small engine that enforces
 its core rule: the agent that built a change is never the one that tests, applies or validates it.
@@ -271,17 +271,17 @@ check_lab: 2 problem(s)
 
 ## Part of a set
 
-agent-lab is the process layer of three small public repos:
+foureyes is the process layer of three small public repos:
 
-- [agent-gate](https://github.com/dmitrykarpushkin/agent-gate): the hook layer that enforces the rules in the agent
+- [stopline](https://github.com/dmitrykarpushkin/stopline): the hook layer that enforces the rules in the agent
   runtime (for example, no push while tests or checks are red) and keeps the core text of `docs/SPEC.md` in sync across agent files.
-- [agent-console](https://github.com/dmitrykarpushkin/agent-console): a dashboard that reads `lab/board.json`.
+- [needsyou](https://github.com/dmitrykarpushkin/needsyou): a dashboard that reads `lab/board.json`.
 
 ```mermaid
 flowchart LR
-    G[agent-gate: hooks in the agent runtime] -->|blocks bad steps live| A[agents]
-    A -->|lab.py submit / done| L[agent-lab: spec + chain engine]
-    L -->|writes lab/board.json| C[agent-console: dashboard]
+    G[stopline: hooks in the agent runtime] -->|blocks bad steps live| A[agents]
+    A -->|lab.py submit / done| L[foureyes: spec + chain engine]
+    L -->|writes lab/board.json| C[needsyou: dashboard]
 ```
 
 ## License

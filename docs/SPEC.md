@@ -14,7 +14,7 @@ session the owner talks to. **Executors** and **verifiers** are agents the orche
   project instructions of the chat product, and each repo's agent file (CLAUDE.md, AGENTS.md). Details stay in repo docs.
   (our rule: a short agent file as a table of contents; one big file crowds out context)
 - The core has one source file; a sync check fails when a copy differs from it (our rule; the check lives in the hook
-  layer, github.com/dmitrykarpushkin/agent-gate).
+  layer, github.com/dmitrykarpushkin/stopline).
 - Instructions are advisory; what must always hold goes into code: hooks, and in this repo the refusals of `lab/lab.py`
   and the re-check `checks/check_lab.py`. [A-bp] (hooks are deterministic, agent instructions are advisory)
 
