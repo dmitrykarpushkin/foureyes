@@ -1,0 +1,27 @@
+id: 20261026-rewrite-the-engine-in-rust-for-speed
+title: Rewrite the engine in Rust for speed
+module: lab
+why: Rust is faster than Python.
+source: lab/MODULE.md
+source_url: https://www.rust-lang.org/
+confirmation: https://www.rust-lang.org/
+unconfirmed: false
+confirmations: []
+submitted_by: scout-web
+submitted_at: '2026-10-26T15:21:49Z'
+state: dropped
+stage: null
+value: null
+cost_pct: null
+needs_yes: false
+method: null
+events:
+- ts: '2026-10-26T15:21:58Z'
+  stage: triage
+  role: triage
+  agent: triage-2
+  model: opus
+  verdict: drop
+  note: 'No measurement shows the engine is a bottleneck. Dropped; resubmit with a number.'
+  evidence: null
+  cost_usd: null

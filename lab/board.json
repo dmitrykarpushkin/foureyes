@@ -1,0 +1,231 @@
+{
+ "updated": "2026-10-26T15:21:58Z",
+ "stages": [
+  {
+   "id": "triage",
+   "role": "triage",
+   "model": "opus",
+   "waiting": 1
+  },
+  {
+   "id": "method",
+   "role": "method",
+   "model": "opus",
+   "waiting": 0
+  },
+  {
+   "id": "build",
+   "role": "builder",
+   "model": "sonnet",
+   "waiting": 0
+  },
+  {
+   "id": "test",
+   "role": "tester",
+   "model": "sonnet",
+   "waiting": 1
+  },
+  {
+   "id": "apply",
+   "role": "applier",
+   "model": "sonnet",
+   "waiting": 0
+  },
+  {
+   "id": "validate",
+   "role": "validator",
+   "model": "opus",
+   "waiting": 0
+  },
+  {
+   "id": "retro",
+   "role": "retro",
+   "model": "opus",
+   "waiting": 0
+  }
+ ],
+ "totals": {
+  "ideas": 4,
+  "active": 2,
+  "parked": 1,
+  "dropped": 1,
+  "done": 0,
+  "cost_usd_measured": 0,
+  "events_with_cost": 0
+ },
+ "methods": {
+  "plain": {
+   "used": 1,
+   "worked": 0,
+   "partly": 0,
+   "failed": 0
+  },
+  "openspec": {
+   "used": 0,
+   "worked": 0,
+   "partly": 0,
+   "failed": 0
+  },
+  "spike": {
+   "used": 0,
+   "worked": 0,
+   "partly": 0,
+   "failed": 0
+  },
+  "design-first": {
+   "used": 0,
+   "worked": 0,
+   "partly": 0,
+   "failed": 0
+  },
+  "speckit": {
+   "used": 0,
+   "worked": 0,
+   "partly": 0,
+   "failed": 0
+  },
+  "ears-spec": {
+   "used": 0,
+   "worked": 0,
+   "partly": 0,
+   "failed": 0
+  }
+ },
+ "ideas": [
+  {
+   "id": "20261026-add-a-json-flag-to-lab-py-next-so-an",
+   "title": "Add a --json flag to lab.py next so an orchestrator can parse the queue",
+   "priority": 2,
+   "done_at": null,
+   "module": "lab",
+   "state": "active",
+   "stage": "test",
+   "value": 3,
+   "method": "plain",
+   "confirmation": "code:lab/lab.py:490",
+   "unconfirmed": false,
+   "submitted_by": "scout-cli",
+   "submitted_at": "2026-10-26T15:21:49Z",
+   "steps": [
+    {
+     "stage": "triage",
+     "role": "triage",
+     "agent": "triage-1",
+     "verdict": "go",
+     "ts": "2026-10-26T15:21:57Z"
+    },
+    {
+     "stage": "method",
+     "role": "method",
+     "agent": "method-1",
+     "verdict": "ok",
+     "ts": "2026-10-26T15:21:57Z"
+    },
+    {
+     "stage": "build",
+     "role": "builder",
+     "agent": "builder-1",
+     "verdict": "ok",
+     "ts": "2026-10-26T15:21:57Z"
+    },
+    {
+     "stage": "test",
+     "role": "tester",
+     "agent": "tester-1",
+     "verdict": "fail",
+     "ts": "2026-10-26T15:21:57Z"
+    },
+    {
+     "stage": "build",
+     "role": "builder",
+     "agent": "builder-2",
+     "verdict": "ok",
+     "ts": "2026-10-26T15:21:57Z"
+    }
+   ],
+   "last": {
+    "stage": "build",
+    "verdict": "ok",
+    "ts": "2026-10-26T15:21:57Z",
+    "note": "Applied --role before formatting; added a test that combines --json and --role."
+   }
+  },
+  {
+   "id": "20261026-cap-the-length-of-the-why-field-of-an",
+   "title": "Cap the length of the why field of an idea",
+   "priority": 3,
+   "done_at": null,
+   "module": "lab",
+   "state": "active",
+   "stage": "triage",
+   "value": null,
+   "method": null,
+   "confirmation": null,
+   "unconfirmed": true,
+   "submitted_by": "scout-intake",
+   "submitted_at": "2026-10-26T15:21:49Z",
+   "steps": [],
+   "last": null
+  },
+  {
+   "id": "20261026-post-a-daily-summary-of-the-board-to-the",
+   "title": "Post a daily summary of the board to the team chat",
+   "priority": 2,
+   "done_at": null,
+   "module": "lab",
+   "state": "parked",
+   "stage": "method",
+   "value": 3,
+   "method": null,
+   "confirmation": null,
+   "unconfirmed": false,
+   "submitted_by": "owner",
+   "submitted_at": "2026-10-26T15:21:49Z",
+   "steps": [
+    {
+     "stage": "triage",
+     "role": "triage",
+     "agent": "triage-1",
+     "verdict": "go",
+     "ts": "2026-10-26T15:21:57Z"
+    }
+   ],
+   "last": {
+    "stage": "triage",
+    "verdict": "go",
+    "ts": "2026-10-26T15:21:57Z",
+    "note": "Posting to a chat is a message to people: parked for the owner's yes."
+   }
+  },
+  {
+   "id": "20261026-rewrite-the-engine-in-rust-for-speed",
+   "title": "Rewrite the engine in Rust for speed",
+   "priority": 3,
+   "done_at": null,
+   "module": "lab",
+   "state": "dropped",
+   "stage": null,
+   "value": null,
+   "method": null,
+   "confirmation": "https://www.rust-lang.org/",
+   "unconfirmed": false,
+   "submitted_by": "scout-web",
+   "submitted_at": "2026-10-26T15:21:49Z",
+   "steps": [
+    {
+     "stage": "triage",
+     "role": "triage",
+     "agent": "triage-2",
+     "verdict": "drop",
+     "ts": "2026-10-26T15:21:58Z"
+    }
+   ],
+   "last": {
+    "stage": "triage",
+    "verdict": "drop",
+    "ts": "2026-10-26T15:21:58Z",
+    "note": "No measurement shows the engine is a bottleneck. Dropped; resubmit with a number."
+   }
+  }
+ ]
+}

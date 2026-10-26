@@ -1,0 +1,27 @@
+id: 20261026-post-a-daily-summary-of-the-board-to-the
+title: Post a daily summary of the board to the team chat
+module: lab
+why: The owner wants to see what moved without opening the repo.
+source: lab/MODULE.md
+source_url: null
+confirmation: null
+unconfirmed: false
+confirmations: []
+submitted_by: owner
+submitted_at: '2026-10-26T15:21:49Z'
+state: parked
+stage: method
+value: 3
+cost_pct: 1.0
+needs_yes: true
+method: null
+events:
+- ts: '2026-10-26T15:21:57Z'
+  stage: triage
+  role: triage
+  agent: triage-1
+  model: opus
+  verdict: go
+  note: 'Posting to a chat is a message to people: parked for the owner''s yes.'
+  evidence: null
+  cost_usd: null

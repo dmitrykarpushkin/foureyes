@@ -1,0 +1,18 @@
+id: 20261026-cap-the-length-of-the-why-field-of-an
+title: Cap the length of the why field of an idea
+module: lab
+why: A scout could paste a whole web page into why, and every later brief carries it.
+source: lab/MODULE.md
+source_url: null
+confirmation: null
+unconfirmed: true
+confirmations: []
+submitted_by: scout-intake
+submitted_at: '2026-10-26T15:21:49Z'
+state: active
+stage: triage
+value: null
+cost_pct: null
+needs_yes: false
+method: null
+events: []

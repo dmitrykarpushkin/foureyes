@@ -1,0 +1,63 @@
+id: 20261026-add-a-json-flag-to-lab-py-next-so-an
+title: Add a --json flag to lab.py next so an orchestrator can parse the queue
+module: lab
+why: The queue is printed as tab-separated columns whose order is documented nowhere, so a machine reader has to guess it. One JSON object per line names the fields.
+source: lab/MODULE.md
+source_url: null
+confirmation: code:lab/lab.py:490
+unconfirmed: false
+confirmations: []
+submitted_by: scout-cli
+submitted_at: '2026-10-26T15:21:49Z'
+state: active
+stage: test
+value: 3
+cost_pct: 0.5
+needs_yes: false
+method: plain
+events:
+- ts: '2026-10-26T15:21:57Z'
+  stage: triage
+  role: triage
+  agent: triage-1
+  model: opus
+  verdict: go
+  note: Confirmed at lab/lab.py:490, next prints four tab-separated columns with no header. Not a duplicate.
+  evidence: null
+  cost_usd: null
+- ts: '2026-10-26T15:21:57Z'
+  stage: method
+  role: method
+  agent: method-1
+  model: opus
+  verdict: ok
+  note: 'Size S: the diff fits one sentence (add a flag and one json.dumps per idea). Depth plain.'
+  evidence: null
+  cost_usd: null
+- ts: '2026-10-26T15:21:57Z'
+  stage: build
+  role: builder
+  agent: builder-1
+  model: sonnet
+  verdict: ok
+  note: Added --json to next; one JSON object per line; tests added in tests/test_lab.py.
+  evidence: null
+  cost_usd: null
+- ts: '2026-10-26T15:21:57Z'
+  stage: test
+  role: tester
+  agent: tester-1
+  model: sonnet
+  verdict: fail
+  note: 'Ran lab.py next --json on two ideas: output is valid JSON, but --role filtering is ignored with --json. Before: --role worked.'
+  evidence: null
+  cost_usd: null
+- ts: '2026-10-26T15:21:57Z'
+  stage: build
+  role: builder
+  agent: builder-2
+  model: sonnet
+  verdict: ok
+  note: Applied --role before formatting; added a test that combines --json and --role.
+  evidence: null
+  cost_usd: null

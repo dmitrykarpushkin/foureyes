@@ -1,0 +1,17 @@
+# Depths of the one mandatory spec (docs/SPEC.md, section 8): the method role picks the depth from the task size (S/M/L), not an independent method per idea.
+# Each entry is a depth of the one spec and has a place in its sizes (section 8): spike before any size, plain S, ears-spec/design-first/speckit M, openspec L.
+# A new depth is added here only together with its place in section 8; retro verdicts score how each depth worked at its size.
+methods:
+  plain:    "Depth for size S: edit, run the checks, commit."
+  openspec: "Depth for size L: changes/<id>/ proposal, tasks (each task names its tests with `tests:`), verification (names test_author, who differs from the implementer); another agent verifies."
+  spike:    "Before any size, when there is no number to decide on: a throwaway experiment with a measured result first; the real change only if the number says so."
+  design-first: "Depth for size M when one area of work touches several modules: a short written design reviewed by a second agent before any code."
+  speckit: "Depth for size M, on trial: Spec Kit flow: a short constitution (lab/RULES.md and the repo's agent instructions), then specify, plan, tasks, and an analyze gate where a second agent cross-checks spec, plan and tasks for gaps before any code."
+  ears-spec: "Depth for size M, one module: requirements as EARS sentences (When/While/If ... the system shall ...), then a short design, then tasks; each requirement becomes one acceptance check."
+
+# Try-out plan for speckit as a depth of size M (not yet measured; unknown is not zero).
+# 1. Pick one mid-size idea (several files, one module) at the method stage; the method role names it with --method speckit.
+# 2. Constitution = the module's MODULE.md plus lab/RULES.md; no new file is needed.
+# 3. Write specify, plan and tasks in changes/<id>/ (proposal, tasks, verification); a second agent runs the analyze gate and lists gaps between the three before the builder starts.
+# 4. Record time, cost (--cost, only if measured) and the number of gaps the analyze gate caught that the ears-spec or design-first depth would have left to the verifier.
+# 5. Retro scores it against the other depths of size M; keep speckit only if the gate caught real defects, otherwise remove this entry.

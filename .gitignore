@@ -1,0 +1,6 @@
+__pycache__/
+*.pyc
+lab/ideas/.*.lock
+lab/ideas/.tmp-*
+lab/.tmp-*
+.venv/

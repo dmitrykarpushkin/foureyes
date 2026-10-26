@@ -1,0 +1,15 @@
+# The Lab chain: one idea goes through these stages; each stage is done by a role (a fresh agent).
+# A stage is finished with: python3 lab/lab.py done IDEA --agent AGENT --verdict V ...
+# separation: the agent of a stage must differ from the agents of the listed earlier stages;
+# the word 'submitter' means the agent that submitted the idea (submitted_by).
+# model: the model tier the orchestrator is advised to run the role on (informational; the engine does not call models).
+stages:
+  - {id: triage,   role: triage,    model: opus,   verdicts: [go, drop, park], separation: [submitter]}
+  - {id: method,   role: method,    model: opus,   verdicts: [ok],             separation: []}
+  - {id: build,    role: builder,   model: sonnet, verdicts: [ok, fail],       separation: []}
+  - {id: test,     role: tester,    model: sonnet, verdicts: [ok, fail],       separation: [build, submitter, triage]}
+  - {id: apply,    role: applier,   model: sonnet, verdicts: [ok, fail],       separation: [build, submitter, triage], evidence: commit}
+  - {id: validate, role: validator, model: opus,   verdicts: [ok, fail],       separation: [build, test, apply, submitter, triage], evidence: commit}
+  - {id: retro,    role: retro,     model: opus,   verdicts: [worked, partly, failed], separation: []}
+sources:
+  - {role: scout, model: sonnet, note: "searches a module or the web for ideas and submits them; never judges them"}
