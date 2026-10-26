@@ -13,6 +13,7 @@ versions follow [Semantic Versioning](https://semver.org/).
 ### Added
 - `bin/foureyes`, a short name for `python3 lab/lab.py`.
 - CI workflow that runs the tests, the stored-file check and the walkthrough.
+- Social preview image `docs/social-preview.png`, rendered from `scripts/social-preview.html` by `scripts/render_preview.js`.
 
 ## [0.1.0] - 2026-10-26
 
